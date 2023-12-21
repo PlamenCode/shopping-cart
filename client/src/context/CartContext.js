@@ -72,7 +72,7 @@ export function CartProvider({ children }){
             totalCost += (productData.price * cartItem.quantity)
         });
         return totalCost;
-    }
+    };
 
     const contextValue = {
         items: cartProducts,
