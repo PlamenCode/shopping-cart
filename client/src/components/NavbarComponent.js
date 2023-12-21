@@ -11,6 +11,21 @@ export default function NavbarComponent() {
     const cart = useContext(CartContext);
     const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0)
 
+    async function checkout(){
+        await fetch('http://localhost:4000/checkout', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({items: cart.items})
+        }).then( (res) => { return res.json() })
+          .then((res) => {
+            console.log(res);
+            if(res.url){
+                window.location.assign(res.url)
+            }
+          })
+    };
     
   return (
     <>
@@ -36,7 +51,10 @@ export default function NavbarComponent() {
 
                         <h1>Total: ${cart.getTotalCost().toFixed(2)}</h1>
 
-                        <Button variant='success'>Purchase items!</Button>
+                        <Button 
+                            variant='success'
+                            onClick={checkout}
+                        >Purchase items!</Button>
                     </> 
                 }
             </Modal.Body>

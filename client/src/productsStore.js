@@ -1,18 +1,23 @@
 // TODO Chnage to database with all products
 
+//ID's in Stripe
+//Coffee - price_1OPjh4GHuXIq1s5dMZXzhgHf
+//Water - price_1OPjhyGHuXIq1s5d1G7UIEjO
+//Cake - price_1OPjiWGHuXIq1s5dk87SnZaB
+
 export const productsArray = [
     {
-        id: '1',
+        id: 'price_1OPjh4GHuXIq1s5dMZXzhgHf',
         title: 'Coffee',
         price: 2.99
     },
     {
-        id: '2',
+        id: 'price_1OPjhyGHuXIq1s5d1G7UIEjO',
         title: 'Water',
         price: 0.99
     },
     {
-        id: '3',
+        id: 'price_1OPjiWGHuXIq1s5dk87SnZaB',
         title: 'Cake',
         price: 8.99
     },
